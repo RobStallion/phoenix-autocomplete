@@ -1,0 +1,14 @@
+<%= form_for @conn, auto_path(@conn, :get_words), [as: :word], fn f -> %>
+
+<h1>howdy</h1>
+
+<div>
+  <%= text_input f, :search %>
+  <%= submit "Log in"%>
+</div>
+
+<%= for word <- @words do %>
+  <p> <%= word %></p>
+<% end %>
+
+<% end %>
