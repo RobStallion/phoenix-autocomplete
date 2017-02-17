@@ -1,0 +1,5 @@
+<h1> test html </h1>
+
+<%= for word <- get_words @words do %>
+  <p> <%= word %></p>
+<% end %>

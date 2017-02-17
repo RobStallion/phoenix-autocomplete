@@ -5,7 +5,9 @@ defmodule Autocomplete.AutoController do
     render conn, "index.html", words: []
   end
 
-  defp matching_words(words, word) do
+  def matching_words(word) do
+    {:ok, words} = File.read("text.txt")
+    IO.inspect word
     number = 10
     length = String.length(word)
 
@@ -19,8 +21,12 @@ defmodule Autocomplete.AutoController do
   end
 
   def get_words(conn, %{"word" => %{"search" => word}}) do
-    {:ok, words} = File.read("text.txt")
-    render conn, "index.html", words: matching_words(words, word)
+    render conn, "index.html", words: matching_words(word)
   end
+
+  def test_word(conn, %{"word" => test_word}) do
+    render conn, "test.html", words: test_word
+  end
+
 end
 

@@ -18,6 +18,7 @@ defmodule Autocomplete.Router do
 
     get "/", AutoController, :index
     post "/input", AutoController, :get_words
+    get "/word/:word", AutoController, :test_word
 
   end
 
