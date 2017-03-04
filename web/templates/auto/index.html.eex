@@ -4,7 +4,7 @@
 
 <div>
   <%= text_input f, :search %>
-  <%= submit "Log in"%>
+  <%= submit "Search word"%>
 </div>
 
 <%= for word <- @words do %>
